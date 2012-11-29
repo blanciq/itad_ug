@@ -8,9 +8,12 @@ namespace ITAD_29_11.Controllers
 {
     public class PollHub : Hub
     {
-        public void Hello()
+        public void Vote(string answer)
         {
-            Clients.All.hello();
+            PollController.Votes
+                .SingleOrDefault(x => x.Answer == answer).Count++;
+
+            Clients.All.UpdateVotes(PollController.Votes);
         }
     }
 }

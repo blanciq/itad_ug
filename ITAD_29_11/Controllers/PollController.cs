@@ -6,7 +6,7 @@ namespace ITAD_29_11.Controllers
 {
     public class PollController : ApiController
     {
-        private static readonly IList<Vote> Votes =
+        public static readonly IList<Vote> Votes =
             new List<Vote>
                 {
                     new Vote { Answer = "PG", Count = 0},

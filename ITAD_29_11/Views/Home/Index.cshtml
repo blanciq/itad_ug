@@ -35,5 +35,13 @@
          var viewModel = new PollViewModel();
          ko.applyBindings(viewModel);
          DAL.getData().done(viewModel.refresh);
+
+         window.hub = $.connection.pollHub;
+
+         hub.client.updateVotes = function(data) {
+             viewModel.refreshVotes(data);
+         };
+
+         $.connection.hub.start();
      });
  </script>

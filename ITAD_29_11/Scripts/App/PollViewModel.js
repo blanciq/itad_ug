@@ -26,7 +26,8 @@
     };
     
     self.vote = function() {
-        DAL.vote(self.Answer).done(self.refreshVotes);
+        //DAL.vote(self.Answer).done(self.refreshVotes);
+        hub.server.vote(self.Answer());
     };
 };
 

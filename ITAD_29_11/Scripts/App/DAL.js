@@ -14,7 +14,7 @@
             return ajaxCall('/api/poll', 'GET');
         },
         vote: function (answer) {
-            return ajaxCall('/api/poll', 'POST', { answer: answer });
+            return ajaxCall('/api/poll', 'POST', { Answer: answer });
         }
     };
 })();
