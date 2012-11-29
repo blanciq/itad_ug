@@ -6,11 +6,17 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    @RenderBody()
-
     @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
-</body>
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/knockout-2.1.0.js"></script>
+    <script src="~/Scripts/App/DAL.js"></script>
+    <script src="~/Scripts/App/PollViewModel.js"></script>
+</head>
+    <body>
+        <div id="body">
+            @RenderBody()
+        </div>
+
+        @RenderSection("scripts", required: false)
+    </body>
 </html>
